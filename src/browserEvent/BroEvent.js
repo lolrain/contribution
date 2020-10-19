@@ -1,4 +1,4 @@
-// new window.VConsole()
+new window.VConsole()
 
 const ua = window.navigator.userAgent.toLowerCase()
 console.log('ua', ua)
@@ -12,17 +12,25 @@ console.log('手机', mobEnv)
 // window.addEventListener('DOMContentLoaded', () => console.log('DOMContentLoaded'))
 export default function broEvent(dom) {
 
-    window.addEventListener('beforeunload', () => {
-        // 页面离开 chrome 1
-        console.log('beforeunload')
-    })
+    // window.onload = function() {
+    //     console.log('onload')
+    // }
 
+    window.addEventListener('load', () => {
+        console.log('load')
+    })
+ 
     window.addEventListener('pageshow', e => {
         // 页面显示 chrome 1 只在初始化时候触发，从子页面返回只触发一次
         if (e.persisted) {
             console.log('缓存 pageshow')
         }
         console.log('pageshow')
+    })
+
+    window.addEventListener('beforeunload', () => {
+        // 页面离开 chrome 1
+        console.log('beforeunload')
     })
 
     // IOS13.7 safari 不支持
@@ -42,6 +50,11 @@ export default function broEvent(dom) {
         } else if (temp === 'visible') {
             console.log('页面出现')
         }
+    })
+
+    window.addEventListener('unload', () => {
+        // 页面离开 chrome 1
+        console.log('unload')
     })
 
     window.addEventListener('', () => console.log(''))
