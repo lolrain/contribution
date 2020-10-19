@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import broEvent from './browserEvent/BroEvent'
+import Progress from './components/Progress'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Progress />
         <a
           className="App-link"
           href="https://www.baidu.com"

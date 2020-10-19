@@ -25,7 +25,7 @@ export default function broEvent(dom) {
     })
  
     window.addEventListener('pageshow', e => {
-        // 页面显示 chrome 1 只在初始化时候触发，从子页面返回只触发一次
+        // 页面显示 chrome 1 
         if (e.persisted) {
             console.log('缓存 pageshow')
             let history = window.history;
