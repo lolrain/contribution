@@ -34,8 +34,8 @@ window.addEventListener("visibilitychange", () => {
 
 ## IOS 端
 
-模拟器 IOS13.7，IPhone11，Iphone 端存在 pageshow 只触发一次[Bug](https://bugs.webkit.org/show_bug.cgi?id=156356)
-通过 replaceState 改变历史记录，下次用户点击浏览器前进后退按钮都会触发 popstate
+* 模拟器 IOS13.7，IPhone11，Iphone 端存在 pageshow 只触发一次[Bug](https://bugs.webkit.org/show_bug.cgi?id=156356)
+* 通过 replaceState 改变历史记录触发 popstate 事件，下次用户点击浏览器前进后退按钮都会触发 popstate 事件
 
 ```javascript
 window.addEventListener("pageshow", (e) => {

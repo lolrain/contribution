@@ -19,11 +19,17 @@ export default function broEvent(dom) {
     window.addEventListener('load', () => {
         console.log('load')
     })
+
+    window.addEventListener('popstate', () => {
+        console.log('popstate')
+    })
  
     window.addEventListener('pageshow', e => {
         // 页面显示 chrome 1 只在初始化时候触发，从子页面返回只触发一次
         if (e.persisted) {
             console.log('缓存 pageshow')
+            let history = window.history;
+            history.replaceState(history.state, window.location.href);
         }
         console.log('pageshow')
     })
